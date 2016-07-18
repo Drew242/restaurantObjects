@@ -56,21 +56,41 @@ Plate.prototype.stringify = function() {
 }
 
 Plate.prototype.isVegan = function() {
-
+  for (i = 0; i < this.ingredients; i++) {
+    if (this.ingredients[i].vegan == false) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 }
 
 Plate.prototype.isGlutenFree = function() {
-
+  for (i = 0; i < this.ingredients; i++) {
+    if (this.ingredients[i].glutenFree == false) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 }
 
 Plate.prototype.isCitrusFree = function() {
-  
+  for (i = 0; i < this.ingredients; i++) {
+    if (this.ingredients[i].citrusFree == false) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 }
 
 var chickParm = new Plate('Chicken Parmesan', 'A lovely blend of angel hair pasta with marinara and parmesan crusted chicken breast',
                           13.95, ['chicken', 'pasta', 'marinara sauce', 'breadcrumbs', 'eggwhites', 'mushrooms', 'onions'])
 var burger = new Plate('Cheese Burger', '1/2 pound pre-cook buffalo burger with choice of cheese and option of bacon',
                           11.95, ['bun', 'ground bison', 'lettuce', 'tomato', 'onion', 'pepperjack cheese', 'bacon'])
+var breakfast = new Plate('Breakfast', 'healthy meal to start your day',
+                          11.95, [apple, bagel])
 console.log(chickParm.stringify())
 console.log(burger.stringify())
 
